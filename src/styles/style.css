@@ -1,0 +1,188 @@
+/* font exsternal */
+@import url('https://fonts.googleapis.com/css?family=Poppins:200i,300,400&display=swap');
+/* reset */
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  background-color: black;
+  color: white;
+}
+
+/*  scroll bar - Only Chrome */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 255, 0.5);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 255, 0.5);
+}
+
+/* scroll bar - Only IE */
+html {
+  scrollbar-face-color: rgba(0, 0, 255, 0.5);
+  scrollbar-shadow-color: #8ea5b5;
+  scrollbar-highlight-color: #8ea5b5;
+}
+
+/* scroll bar - Only FireFox */
+html {
+  scrollbar-color: rgba(0, 0, 255, 0.5) rgb(221, 221, 221);
+}
+body {
+  min-height: 1000px;
+}
+
+/* form */
+h1 {
+  text-align: center;
+}
+form {
+  position: relative;
+  width: 500px;
+  max-width: 90%;
+  padding: 40px 30px 30px;
+  margin: 0 auto 80px;
+  border: 2px dashed gray;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20;
+  box-sizing: border-box;
+  transition: all 0.3s;
+}
+form:hover {
+  border: 2px solid gray;
+}
+
+form > p {
+  text-align: right;
+  position: absolute;
+  top: 15px;
+  right: 40px;
+}
+input,
+textarea {
+  padding: 7px;
+  letter-spacing: 1px;
+  font-family: 'Poppins', sans-serif;
+  background: rgba(255, 254, 254, 0.904);
+}
+input:focus,
+textarea:focus {
+  background: black;
+  color: rgba(255, 254, 254, 0.904);
+}
+.input-filter {
+  position: relative;
+  left: 30px;
+  margin: 0 auto;
+  max-width: 1000px;
+  margin: 30px auto;
+}
+.input-filter > input {
+  max-width: 300px;
+}
+h1.note-app {
+  background-color: rgba(255, 254, 254, 0.904);
+  color: black;
+}
+
+/* note card */
+.container {
+  margin: 0 auto;
+  max-width: 1000px;
+  margin: 30px auto;
+}
+.notes-list {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border: 1px dashed gray;
+}
+.notes-list:hover {
+  border: 1px solid gray;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border: 1px solid gray;
+  width: 220px;
+  height: min-content;
+  margin: 10px;
+}
+.card-content {
+  padding: 7px;
+}
+p.note-date {
+  font-size: 0.8em;
+  color: rgb(178, 178, 182);
+}
+article {
+  font-size: 0.8em;
+  width: 100%;
+  overflow-y: auto;
+  word-break: break-all;
+  box-sizing: border-box;
+  width: 210px;
+  height: 150px;
+  padding: 5px 0;
+  margin: 5px 0 0 0;
+  border-top: 1px dashed gray;
+}
+.card-btn {
+  display: flex;
+  justify-content: space-around;
+}
+
+button {
+  width: 100%;
+  border: 1px solid gray;
+  padding: 5px;
+  color: rgba(255, 254, 254, 0.904);
+  font-family: 'Poppins', sans-serif;
+}
+button.btn-form {
+  background-color: rgba(0, 0, 255, 0.7);
+  border-radius: 5px;
+}
+button.delete {
+  background-color: rgba(255, 0, 0, 0.7);
+}
+button.archive {
+  background-color: rgba(0, 128, 0, 0.7);
+}
+button:hover {
+  background-color: rgba(255, 254, 254, 0.9);
+  color: black;
+  cursor: pointer;
+}
+
+p {
+  padding: 0 0 5px 0;
+}
+p.note-alert {
+  padding: 30px;
+  width: 100%;
+  font-size: 1.3em;
+  text-align: center;
+}
