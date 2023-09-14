@@ -1,8 +1,9 @@
-import React, { Component, Fragment } from 'react';
-import { getData } from '../utils/data';
-import NoteFilter from './NoteFilter';
-import NoteInput from './NoteInput';
-import NoteList from './NoteList';
+import React, { Component, Fragment } from "react";
+import { getData } from "../utils/data";
+import NoteFilter from "./NoteFilter";
+import NoteInput from "./NoteInput";
+import NoteList from "./NoteList";
+import Navbar from "./Navbar";
 
 export default class NoteApp extends Component {
   constructor(props) {
@@ -10,7 +11,7 @@ export default class NoteApp extends Component {
 
     this.state = {
       notes: getData(),
-      keyword: '',
+      keyword: "",
       keywordFilter: [],
     };
   }
@@ -34,8 +35,10 @@ export default class NoteApp extends Component {
 
   onDeleteHandler = (id) => {
     const notes = this.state.notes.filter((note) => note.id !== id);
-    const keywordFilter = this.state.keywordFilter.filter((note) => note.id !== id);
-    alert('Data berhasil di delete !');
+    const keywordFilter = this.state.keywordFilter.filter(
+      (note) => note.id !== id
+    );
+    alert("Data berhasil di delete !");
     this.setState({ notes, keywordFilter });
   };
 
@@ -97,29 +100,43 @@ export default class NoteApp extends Component {
     this.setState((prevState) => {
       return {
         keyword: event.target.value,
-        keywordFilter: prevState.notes.filter((note) => note.title.toLowerCase().includes(event.target.value.toLowerCase())),
+        keywordFilter: prevState.notes.filter((note) =>
+          note.title.toLowerCase().includes(event.target.value.toLowerCase())
+        ),
       };
     });
-    // console.log(event.target.value);
   };
 
   render() {
     return (
-      <Fragment>
-        <h1 className="note-app">NOTE APP</h1>
+      <>
+        <Navbar />
         <NoteInput onAddNote={this.onAddNoteHandler} />
-        <NoteFilter keyword={this.state.keyword} onChangeKeyword={this.onChangeKeywordHandler} />
+        <NoteFilter
+          keyword={this.state.keyword}
+          onChangeKeyword={this.onChangeKeywordHandler}
+        />
 
         {this.state.keyword.length ? (
           this.state.keywordFilter.length ? (
-            <NoteList notes={this.state.keywordFilter} onDelete={this.onDeleteHandler} onArchive={this.onArchiveHandler} onUnArchive={this.onUnArchiveHandler} />
+            <NoteList
+              notes={this.state.keywordFilter}
+              onDelete={this.onDeleteHandler}
+              onArchive={this.onArchiveHandler}
+              onUnArchive={this.onUnArchiveHandler}
+            />
           ) : (
-            <p className="note-alert">Catatan Tidak Tersedia</p>
+            <p className="note-alert">-- Catatan Tidak Ditemukan! --</p>
           )
         ) : (
-          <NoteList notes={this.state.notes} onDelete={this.onDeleteHandler} onArchive={this.onArchiveHandler} onUnArchive={this.onUnArchiveHandler} />
+          <NoteList
+            notes={this.state.notes}
+            onDelete={this.onDeleteHandler}
+            onArchive={this.onArchiveHandler}
+            onUnArchive={this.onUnArchiveHandler}
+          />
         )}
-      </Fragment>
+      </>
     );
   }
 }

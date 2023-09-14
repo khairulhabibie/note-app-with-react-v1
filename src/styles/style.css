@@ -1,5 +1,6 @@
 /* font exsternal */
-@import url('https://fonts.googleapis.com/css?family=Poppins:200i,300,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins&display=swap");
+
 /* reset */
 *,
 *::before,
@@ -8,125 +9,118 @@
   margin: 0;
   box-sizing: border-box;
 }
-html {
+
+:root {
+  --primary: white;
+  --background: black;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
-}
-body {
-  font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
-  background-color: black;
-  color: white;
+  background-color: var(--background);
+  color: var(--primary);
 }
 
-/*  scroll bar - Only Chrome */
-::-webkit-scrollbar {
-  width: 5px;
-  height: 10px;
-}
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey;
-  border-radius: 10px;
-}
-::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 255, 0.5);
-  border-radius: 10px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 255, 0.5);
+/* navbar */
+header {
+  width: 100%;
+  background-color: var(--primary);
 }
 
-/* scroll bar - Only IE */
-html {
-  scrollbar-face-color: rgba(0, 0, 255, 0.5);
-  scrollbar-shadow-color: #8ea5b5;
-  scrollbar-highlight-color: #8ea5b5;
-}
-
-/* scroll bar - Only FireFox */
-html {
-  scrollbar-color: rgba(0, 0, 255, 0.5) rgb(221, 221, 221);
-}
-body {
-  min-height: 1000px;
+nav {
+  display: flex;
+  height: 60px;
+  align-items: center;
+  color: var(--background);
+  width: 1000px;
+  margin: 0 auto;
+  padding: 0px 50px;
+  font-family: "Pacifico", cursive;
+  font-size: 20px;
 }
 
 /* form */
-h1 {
+.title {
   text-align: center;
+  font-family: "Pacifico", cursive;
+  font-size: 50px;
 }
 form {
   position: relative;
-  width: 500px;
   max-width: 90%;
   padding: 40px 30px 30px;
-  margin: 0 auto 80px;
-  border: 2px dashed gray;
+  margin: 0 auto;
+  border: 2px solid var(--primary);
   display: flex;
   flex-direction: column;
   border-radius: 20;
   box-sizing: border-box;
   transition: all 0.3s;
 }
-form:hover {
-  border: 2px solid gray;
-}
 
 form > p {
   text-align: right;
   position: absolute;
-  top: 15px;
+  top: 10px;
   right: 40px;
+  color: yellow;
 }
 input,
 textarea {
-  padding: 7px;
+  padding: 7px 12px;
   letter-spacing: 1px;
-  font-family: 'Poppins', sans-serif;
-  background: rgba(255, 254, 254, 0.904);
+  font-size: 20px;
+  font-family: inherit;
+  background: var(--primary);
+  border-style: none;
+  outline: none;
+  border-bottom: solid var(--primary) 5px;
 }
 input:focus,
 textarea:focus {
-  background: black;
-  color: rgba(255, 254, 254, 0.904);
+  border-style: none;
+  outline: none;
+  border-bottom: solid yellow 5px;
 }
 .input-filter {
-  position: relative;
-  left: 30px;
   margin: 0 auto;
   max-width: 1000px;
   margin: 30px auto;
 }
-.input-filter > input {
-  max-width: 300px;
+.input-filter > p {
+  font-family: "Pacifico", cursive;
+  font-size: 30px;
 }
-h1.note-app {
-  background-color: rgba(255, 254, 254, 0.904);
-  color: black;
+.input-filter > input {
+  width: 100%;
+  font-size: 25px;
 }
 
 /* note card */
-.container {
+section {
   margin: 0 auto;
   max-width: 1000px;
   margin: 30px auto;
+  padding: 0px 0 50px;
+  font-size: 20px;
 }
 .notes-list {
   position: relative;
   display: flex;
+  padding: 20px 0;
   flex-direction: row;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  border: 1px dashed gray;
 }
-.notes-list:hover {
-  border: 1px solid gray;
-}
+
 .card {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   border: 1px solid gray;
-  width: 220px;
+  width: 310px;
   height: min-content;
   margin: 10px;
 }
@@ -143,7 +137,7 @@ article {
   overflow-y: auto;
   word-break: break-all;
   box-sizing: border-box;
-  width: 210px;
+  width: 100%;
   height: 150px;
   padding: 5px 0;
   margin: 5px 0 0 0;
@@ -158,22 +152,23 @@ button {
   width: 100%;
   border: 1px solid gray;
   padding: 5px;
-  color: rgba(255, 254, 254, 0.904);
-  font-family: 'Poppins', sans-serif;
+  color: var(--primary);
+  font-family: "Poppins", sans-serif;
 }
 button.btn-form {
-  background-color: rgba(0, 0, 255, 0.7);
+  background-color: rgba(0, 0, 255, 0.6);
   border-radius: 5px;
+  font-size: 20px;
 }
 button.delete {
-  background-color: rgba(255, 0, 0, 0.7);
+  background-color: rgba(255, 0, 0, 0.6);
 }
 button.archive {
-  background-color: rgba(0, 128, 0, 0.7);
+  background-color: rgba(0, 128, 0, 0.6);
 }
 button:hover {
   background-color: rgba(255, 254, 254, 0.9);
-  color: black;
+  color: var(--background);
   cursor: pointer;
 }
 

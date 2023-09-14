@@ -1,0 +1,31 @@
+/*  scroll bar - Only Chrome */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 255, 0.5);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 255, 0.5);
+}
+
+/* scroll bar - Only IE */
+html {
+  scrollbar-face-color: rgba(0, 0, 255, 0.5);
+  scrollbar-shadow-color: #8ea5b5;
+  scrollbar-highlight-color: #8ea5b5;
+}
+
+/* scroll bar - Only FireFox */
+html {
+  scrollbar-color: rgba(0, 0, 255, 0.5) rgb(221, 221, 221);
+}
+body {
+  min-height: 1000px;
+}
