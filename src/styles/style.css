@@ -18,23 +18,24 @@
 body {
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
-  overflow-x: hidden;
   background-color: var(--background);
   color: var(--primary);
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow-x: hidden;
 }
 
 /* navbar */
 header {
-  width: 100%;
+  max-width: 100%;
   background-color: var(--primary);
+  color: var(--background);
 }
 
 nav {
   display: flex;
   height: 60px;
   align-items: center;
-  color: var(--background);
-  width: 1000px;
   margin: 0 auto;
   padding: 0px 50px;
   font-family: "Pacifico", cursive;
@@ -98,6 +99,12 @@ textarea:focus {
   font-size: 25px;
 }
 
+@media screen and (max-width: 576px) {
+  .input-filter {
+    margin: 30px 10px;
+  }
+}
+
 /* note card */
 section {
   margin: 0 auto;
@@ -154,6 +161,8 @@ button {
   padding: 5px;
   color: var(--primary);
   font-family: "Poppins", sans-serif;
+  border-style: none;
+  outline: none;
 }
 button.btn-form {
   background-color: rgba(0, 0, 255, 0.6);

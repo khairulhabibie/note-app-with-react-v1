@@ -20,7 +20,7 @@ const NoteList = ({ notes, onDelete, onArchive, onUnArchive }) => {
               />
             ))
           ) : (
-            <p className="note-alert">-- Catatan Tidak Tersedia! --</p>
+            <p className="note-alert">Catatan Aktif Tidak Tersedia!</p>
           )}
         </div>
       </section>
@@ -37,7 +37,7 @@ const NoteList = ({ notes, onDelete, onArchive, onUnArchive }) => {
               />
             ))
           ) : (
-            <p className="note-alert">-- Catatan Tidak Tersedia --</p>
+            <p className="note-alert">Catatan Arsip Tidak Tersedia!</p>
           )}
         </div>
       </section>
