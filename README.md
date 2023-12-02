@@ -1,1 +1,1 @@
-# NOTE APP is a user-friendly note-taking application with a responsive display (between laptops, tablets and cellphones). This application can add notes, delete, move notes from active notes to archives and vice versa, and has a filter feature that is useful for finding notes quickly.
+NOTE APP is a user-friendly note-taking application with a responsive display (between laptops, tablets and cellphones). This application can add notes, delete, move notes from active notes to archives and vice versa, and has a filter feature that is useful for finding notes quickly.
